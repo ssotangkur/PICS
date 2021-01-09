@@ -116,3 +116,24 @@ than intended CPU usage. Instead of ~11% CPU PICS consumes ~16% CPU while stream
 This is still much lower than rougnly 90-100% CPU usage from other MJPEG streaming software.
 
     v4l2-ctl -d /dev/video0 --list-formats
+
+## Creating a service to start PICS on boot ##
+
+Edit the included `pics.service` file to update the location of the `PICS` executable.
+
+Copy the that file to `/etc/systemd/system` as root.
+```
+sudo cp pics.service /etc/systemd/system/.
+```
+
+Test that it works
+```
+sudo systemctl start pics.service
+```
+
+If it works correctly, enable it so it starts automatically on reboot
+```
+sudo systemctl enable pics.service
+```
+
+
