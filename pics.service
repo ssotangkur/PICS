@@ -3,7 +3,7 @@ Description=PICS Service
 After=network.target
 
 [Service]
-ExecStart=/home/pi/PICS/PICS
+ExecStart=stdbuf -o0 -e0 /home/pi/PICS/PICS
 WorkingDirectory=/home/pi/PICS
 StandardOutput=inherit
 StandardError=inherit
